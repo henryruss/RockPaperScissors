@@ -1,16 +1,11 @@
-console.log("Hello, World!");
-
 function getComputerChoice(){
     let choice = Math.floor(Math.random() * 3) + 1;
     if (choice == 1){
-        console.log("rock");
         return "rock";
     }
     else if (choice==2){
-        console.log("paper");
         return "paper";
     }
-    else console.log("scissors");
     return "scissors";
 }
     
@@ -75,5 +70,35 @@ function getComputerChoice(){
         }
         else console.log("The takeover is inevitble.")
         }
-        playGame();
+        // playGame();
+
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach((button)=>{
+            button.addEventListener('click', () =>{
+                huChoice = button.textContent.toLowerCase();
+                coChoice = getComputerChoice();
+                playRound(huChoice, coChoice);
+                scoUpdate();
+                // getComputerChoice();
+                // console.log("You clicked "+ button.textContent);
+            })
+        })
+        const container = document.querySelector("#score");
+        const picks = document.createElement("div");
+        const score = document.createElement("div");
+        function scoUpdate(){
+            if (computerScore == 5 || humanScore == 5) {
+                container.innerHTML = "";  // Remove all previous content
+                if (computerScore == 5) {
+                    container.textContent = "Game over! Computer wins.";
+                } else if (humanScore == 5) {
+                    container.textContent = "Game over! You win!";
+                }
+            }
+            else{
+        picks.textContent = "You picked "+huChoice+", and Computer picked "+coChoice+".";
+        score.textContent = "Human: "+humanScore+" Computer: "+computerScore;
+        container.append(picks, score);
+        }
+    }
     
