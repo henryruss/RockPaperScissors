@@ -1,100 +1,75 @@
-body{
+body {
+    background-color: #121212; /* Dark background */
+    color: #00FF00; /* Bright green text for that hacker vibe */
+    font-family: 'Courier New', monospace; /* Monospace font for a coding style */
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    width: 100%;
-    margin: 0;
-    gap: 10px;
-    height: 100vh; /* Full height of the viewport */
-    background: linear-gradient(135deg, #4c4cfa, #00c9ff);
-    background-attachment: fixed; /* Keeps background in place when scrolling */
-    background-size: cover; /* Ensure background covers the entire page */
-    background-repeat: no-repeat;
-    color: white;
-    font-family: 'Arial', sans-serif;
-    
-  font-size: 24px; /* Larger base font size */
-  color: #D3D3D3; /* Light gray text for contrast */
-  line-height: 1.6; /* Improved readability with line height */
-  margin: 0;
-  padding: 0; /* Subtle background color for the body */
-}
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* Subtle texture */
-    opacity: 0.4; /* Make the texture subtle */
-    z-index: -1; /* Ensure it's behind the content */
-  }
-h1{
-    align-items: center;
-}
-/* Base button styles */
-button {
-    padding: 12px 25px;
-    font-size: 18px;
-    font-weight: 500;
-    color: white;
-    background: rgba(0, 51, 102, 0.7); /* Transparent deep blue */
-    border: 2px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
-    border-radius: 30px;
-    cursor:crosshair;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    margin: 10px; /* Gap between buttons */
-    width: 100%; /* Full width of the parent container */
-    max-width: 300px; /* Limit max width */
-    backdrop-filter: blur(5px); /* Adds a blurred glass effect */
-    
-}
-  
-  /* Hover effect */
-  button:hover {
-    background: rgba(112, 128, 144, 0.7); /* Transparent slate gray on hover */
-    transform: translateY(-3px);
-    border-color: rgba(255, 255, 255, 0.6); /* Brighten the border on hover */
-    box-shadow: 0 8px 20px rgba(0, 51, 102, 0.4); /* Add a glowing shadow effect */
+    height: 100vh;
+    overflow: hidden;
   }
   
-  /* Active effect (when the button is clicked) */
-  button:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background: rgba(0, 51, 102, 0.9); /* Darken the background slightly */
-  }
-  
-  /* Optional: Remove focus outline */
-  button:focus {
-    outline: none;
-  }
-  .styled-div {
-    background: rgba(0, 51, 102, 0.8); /* Deep blue background with transparency */
+  /* Styling for the container of the score */
+  #score {
+    background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent dark background */
+    border-radius: 10px;
     padding: 20px;
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 51, 102, 0.3); /* Soft shadow for depth */
-    width: 80%;
-    max-width: 600px; /* Optional: Limits the width for larger screens */ /* White text for contrast */
-    margin: 20px auto; /* Center the div with margin */
-    text-align: center; /* Centered text */
-    font-family: 'Arial', sans-serif;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    backdrop-filter: blur(5px); /* Optional: Adds a glass-like effect */
-    margin: 40;
-    font-size: 24px;
-    color: #FFFFFF;
-}
-  
-  /* Hover effect */
-  .styled-div:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-    box-shadow: 0 8px 20px rgba(0, 51, 102, 0.4); /* Darker shadow on hover */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Green glow shadow */
+    text-align: center;
+    max-width: 80%;
+    width: 400px;
+    margin: 20px;
   }
   
-
+  /* Styling for the buttons */
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #00FF00;
+    background-color: black;
+    border: 2px solid #00FF00; /* Green border */
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.6); /* Green glow */
+    transition: all 0.3s ease;
+    margin: 10px;
+    width: 150px;
+  }
   
-  /* Optional: Add a border for emphasis */
+  button:hover {
+    background-color: #00FF00;
+    color: black;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.9); /* Bright green glow on hover */
+  }
   
+  button:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.8); /* Slightly darker green glow on click */
+  }
+  
+  /* Styling for text */
+  p{
+    color: #00FF00;
+    font-size: 22px;
+    text-shadow: 0 0 3px #00FF00, 0 0 10px #00FF00; /* Glowing green text */
+    margin: 0;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+  }
+  
+  /* Final Score display */
+    h1{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #00FF00;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Green glow */
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px;
+    width: fit-content;
+  }
